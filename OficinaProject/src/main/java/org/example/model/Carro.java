@@ -43,4 +43,12 @@ public class Carro {
     public void setProprietario(Cliente proprietario) {
         this.proprietario = proprietario;
     }
+
+    @Override
+    public String toString() {
+        return "Modelo: " + modelo + 
+        ", Marca: " + marca + 
+        ", Placa: " + placa + 
+        ", Proprietário: " + proprietario.getNome();
+    }
 }

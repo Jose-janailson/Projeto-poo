@@ -40,4 +40,9 @@ public class Cliente {
     public void removerCarro(Carro carro){
         this.carros.remove(carro);
     }
+
+    @Override
+    public String toString() {  
+        return "Nome: " + nome + ", CPF: " + cpf + ", Carros: " + carros;   
+    }
 }
