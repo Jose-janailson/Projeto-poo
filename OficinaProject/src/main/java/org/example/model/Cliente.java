@@ -18,6 +18,9 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
+        if(nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome do cliente não pode ser nulo ou vazio.");
+        }
         this.nome = nome;
     }
 
@@ -25,7 +28,10 @@ public class Cliente {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(String cpf) {    
+        if(cpf == null || !cpf.matches("\\d{11}")) {
+            throw new IllegalArgumentException("O CPF deve conter exatamente 11 dígitos numéricos.");
+        }
         this.cpf = cpf;
     }
 
