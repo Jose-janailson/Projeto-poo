@@ -32,4 +32,12 @@ public class Cliente {
     public List<Carro> getCarros() {
         return carros;
     }
+
+    public void adicionarCarro(Carro carro){
+        this.carros.add(carro);
+    }
+
+    public void removerCarro(Carro carro){
+        this.carros.remove(carro);
+    }
 }
