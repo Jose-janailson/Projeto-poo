@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.model.Cliente;
+import org.example.repository.ClienteRepository;
+
 public class Main {
-    static void main() {
-    
+    public static void main(String[] args) {
     }
 }
