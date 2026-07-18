@@ -1,9 +1,10 @@
 package org.example.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente {
+public class Cliente implements Serializable{
     private String nome;
     private String cpf;
     private List<Carro> carros = new ArrayList<>();
