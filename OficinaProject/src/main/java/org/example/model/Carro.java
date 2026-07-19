@@ -1,6 +1,7 @@
 package org.example.model;
+import java.io.Serializable;
 
-public class Carro {
+public class Carro implements Serializable {
     private String modelo;
     private String marca;
     private String placa;
