@@ -45,6 +45,14 @@ public class ClienteRepository {
             }
         }
     }
+    public List<Carro> listarCarrosPorCpf(String CpfCliente){
+        for (Cliente cliente : clientes){
+            if(cliente.getCpf.equals(CpfCliente)){
+                return cliente.getCarros;
+            }
+        }
+    }
+
 // salvar e carregar do arquivo
     private void salvarClienteNoArquivo() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CLIENTES))) {

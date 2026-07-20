@@ -34,7 +34,9 @@ public class CarroRepository {
         }
         return null;
     }
-
+    public Cliente saberProprietario(Carro carro){
+        return carro.getProprietario;
+    }
     public void atualizarCarro(Carro carroAtualizado) {
         for (int i = 0; i < carros.size(); i++) {
             if (carros.get(i).getPlaca().equals(carroAtualizado.getPlaca())) {
