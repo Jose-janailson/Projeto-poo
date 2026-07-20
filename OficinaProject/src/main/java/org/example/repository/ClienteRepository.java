@@ -10,17 +10,17 @@ public class ClienteRepository {
     private static final String ARQUIVO_CLIENTES = "clientes.dat";
 
     public ClienteRepository() {
-        this.clientes = carregarDoArquivo();
+        this.clientes = carregarClienteDoArquivo();
     }
 
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
-        salvarNoArquivo();
+        salvarClienteNoArquivo();
     }
 
     public void removerCliente(Cliente cliente) {
         clientes.remove(cliente);
-        salvarNoArquivo();
+        salvarClienteNoArquivo();
     }
 
     public List<Cliente> listarClientes() {
@@ -40,13 +40,13 @@ public class ClienteRepository {
         for (int i = 0; i < clientes.size(); i++) {
             if (clientes.get(i).getCpf().equals(clienteAtualizado.getCpf())) {
                 clientes.set(i, clienteAtualizado);
-                salvarNoArquivo();
+                salvarClienteNoArquivo();
                 return;
             }
         }
     }
 // salvar e carregar do arquivo
-    private void salvarNoArquivo() {
+    private void salvarClienteNoArquivo() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CLIENTES))) {
             oos.writeObject(clientes);
         } catch (IOException e) {
@@ -56,7 +56,7 @@ public class ClienteRepository {
 
 
     @SuppressWarnings("unchecked")
-    private List<Cliente> carregarDoArquivo() {
+    private List<Cliente> carregarClienteDoArquivo() {
         File arquivo = new File(ARQUIVO_CLIENTES);
         if (!arquivo.exists()) {
             return new ArrayList<>();
