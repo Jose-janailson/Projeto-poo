@@ -1,4 +1,5 @@
 package org.example.repository;
+import org.example.model.Carro;
 import org.example.model.Cliente;
 
 import java.io.*;
@@ -47,10 +48,11 @@ public class ClienteRepository {
     }
     public List<Carro> listarCarrosPorCpf(String CpfCliente){
         for (Cliente cliente : clientes){
-            if(cliente.getCpf.equals(CpfCliente)){
-                return cliente.getCarros;
+            if(cliente.getCpf().equals(CpfCliente)){
+                return cliente.getCarros();
             }
         }
+        return null;
     }
 
 // salvar e carregar do arquivo
