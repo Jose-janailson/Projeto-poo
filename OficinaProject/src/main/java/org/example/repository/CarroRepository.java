@@ -2,6 +2,8 @@ package org.example.repository;
 
 import java.util.List;
 import org.example.model.Carro;
+import org.example.model.Cliente;
+
 import java.io.*;
 import java.util.ArrayList;
 public class CarroRepository {
@@ -35,7 +37,7 @@ public class CarroRepository {
         return null;
     }
     public Cliente saberProprietario(Carro carro){
-        return carro.getProprietario;
+        return carro.getProprietario();
     }
     public void atualizarCarro(Carro carroAtualizado) {
         for (int i = 0; i < carros.size(); i++) {
