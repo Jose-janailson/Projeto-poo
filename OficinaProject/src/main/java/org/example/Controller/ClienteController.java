@@ -8,14 +8,17 @@ import org.example.model.Cliente;
 public class ClienteController {
     private ClienteRepository clienteRepository;
 
+    private boolean cpfValido(String cpf) {
+        return cpf != null && !cpf.trim().isEmpty() && cpf.matches("\\d{11}");
+    }
+
     public ClienteController(ClienteRepository clienteRepository) {
         this.clienteRepository = clienteRepository;
     }
 
     public void adicionarCliente(String nome, String cpf) {
-        if(cpf == null || cpf.trim().isEmpty() || !cpf.matches("\\d{11}")) {
-            System.out.println("CPF inválido.");
-            return;
+        if(!cpfValido(cpf)) {
+            throw new IllegalArgumentException("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
         }
         Cliente cliente = new Cliente(nome, cpf);
         clienteRepository.adicionarCliente(cliente);
@@ -27,37 +30,36 @@ public class ClienteController {
     }
 
     public void atualizarCliente(String nome, String cpf) {
-        if(cpf == null || cpf.trim().isEmpty() || !cpf.matches("\\d{11}")) {
-            System.out.println("CPF inválido.");
-            return;
+        if(!cpfValido(cpf)) {
+            throw new IllegalArgumentException("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
         }
         Cliente clienteAtualizado = new Cliente(nome, cpf);
         clienteRepository.atualizarCliente(clienteAtualizado);
     }
 
-    public void buscarClientePorCpf(String cpf) {
-        if(cpf == null || cpf.trim().isEmpty() || !cpf.matches("\\d{11}")) {
-            System.out.println("CPF inválido.");
-            return;
+    public Cliente buscarClientePorCpf(String cpf) {
+        if(!cpfValido(cpf)) {
+            throw new IllegalArgumentException("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
         }
         Cliente cliente = clienteRepository.buscarClientePorCpf(cpf);
         if (cliente != null) {
             System.out.println("Cliente encontrado: " + cliente);
+            return cliente;
         } else {
             System.out.println("Cliente não encontrado.");
+            return null;
         }
     }
 
     public void removerCliente(String cpf){
-        if(cpf == null || cpf.trim().isEmpty() || !cpf.matches("\\d{11}")) {
-            System.out.println("CPF inválido.");
-            return;
+        if(!cpfValido(cpf)) {
+            throw new IllegalArgumentException("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
         }
         Cliente cliente = clienteRepository.buscarClientePorCpf(cpf);
         if (cliente != null) {
             clienteRepository.removerCliente(cliente);
         } else {
-            System.out.println("Cliente não encontrado.");
+            throw new IllegalArgumentException  ("Cliente não encontrado.");
         }
     }
 }
