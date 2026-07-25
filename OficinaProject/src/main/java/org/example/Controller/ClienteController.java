@@ -1,9 +1,8 @@
 package org.example.Controller;
+import org.example.Model.Cliente;
 import org.example.repository.ClienteRepository;
 
 import java.util.List;
-
-import org.example.model.Cliente;
 
 public class ClienteController {
     private ClienteRepository clienteRepository;

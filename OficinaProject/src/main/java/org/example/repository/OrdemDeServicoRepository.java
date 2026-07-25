@@ -1,6 +1,8 @@
 package org.example.repository;
-import org.example.model.OrdemDeServico;
 import java.util.List;
+
+import org.example.Model.OrdemDeServico;
+
 import java.io.*;
 import java.util.ArrayList;
 

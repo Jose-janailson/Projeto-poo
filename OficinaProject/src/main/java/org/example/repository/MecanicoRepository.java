@@ -1,6 +1,8 @@
 package org.example.repository;
-import org.example.model.Mecanico;
 import java.util.List;
+
+import org.example.Model.Mecanico;
+
 import java.io.*;
 import java.util.ArrayList;
 

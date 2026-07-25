@@ -1,10 +1,10 @@
 package org.example.repository;
-import org.example.model.Carro;
-import org.example.model.Cliente;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.example.Model.Carro;
+import org.example.Model.Cliente;
 
 public class ClienteRepository {
     private List<Cliente> clientes;
