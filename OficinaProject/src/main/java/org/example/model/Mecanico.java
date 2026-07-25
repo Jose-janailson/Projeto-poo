@@ -1,6 +1,7 @@
 package org.example.model;
+import java.io.Serializable;
 
-public class Mecanico {
+public class Mecanico implements Serializable {
     private String nome;
     private String cpf;
     private float salario;

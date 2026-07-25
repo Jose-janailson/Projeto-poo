@@ -1,4 +1,5 @@
 package org.example.model;
+import java.io.Serializable;
 
 public class OrdemDeServico {
     private Mecanico mecanicoResponsavel;
