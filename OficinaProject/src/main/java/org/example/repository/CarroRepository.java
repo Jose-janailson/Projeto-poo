@@ -1,8 +1,9 @@
 package org.example.repository;
 
 import java.util.List;
-import org.example.model.Carro;
-import org.example.model.Cliente;
+
+import org.example.Model.Carro;
+import org.example.Model.Cliente;
 
 import java.io.*;
 import java.util.ArrayList;

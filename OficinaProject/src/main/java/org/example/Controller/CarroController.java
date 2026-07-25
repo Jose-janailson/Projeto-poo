@@ -1,7 +1,7 @@
 package org.example.Controller;
 
-import org.example.model.Carro;
-import org.example.model.Cliente;
+import org.example.Model.Carro;
+import org.example.Model.Cliente;
 import org.example.repository.CarroRepository;
 import org.example.repository.ClienteRepository;
 
