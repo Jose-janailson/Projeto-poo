@@ -55,7 +55,6 @@ public class ClienteRepository {
         return null;
     }
 
-// salvar e carregar do arquivo
     private void salvarClienteNoArquivo() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARQUIVO_CLIENTES))) {
             oos.writeObject(clientes);
