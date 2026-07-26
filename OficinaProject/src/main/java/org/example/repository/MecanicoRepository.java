@@ -60,7 +60,7 @@ public class MecanicoRepository {
         }
     }
 
-    public Mecanico buscarPorCPF (String cpf){
+    public Mecanico buscarCPF (String cpf){
         for(Mecanico mecanico: mecanicos){
             if(mecanico.getCpf().equals(cpf)) {
                 return mecanico;
