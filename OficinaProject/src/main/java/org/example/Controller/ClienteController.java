@@ -5,7 +5,7 @@ import org.example.repository.ClienteRepository;
 import java.util.List;
 
 public class ClienteController {
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
 
     private boolean cpfValido(String cpf) {
         return cpf != null && !cpf.trim().isEmpty() && cpf.matches("\\d{11}");
@@ -18,6 +18,12 @@ public class ClienteController {
     public void adicionarCliente(String nome, String cpf) {
         if(!cpfValido(cpf)) {
             throw new IllegalArgumentException("CPF inválido. Deve conter exatamente 11 dígitos numéricos.");
+        }
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome é obrigatório.");
+        }
+        if(clienteRepository.buscarClientePorCpf(cpf) != null){
+            throw new IllegalArgumentException("O cliente já existe no sistema! Experimente atualizá-lo.");
         }
         Cliente cliente = new Cliente(nome, cpf);
         clienteRepository.adicionarCliente(cliente);

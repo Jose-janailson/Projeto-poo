@@ -24,6 +24,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="68" max="32767" attributes="0"/>
               <Component id="btnGerenciarClientes" min="-2" pref="87" max="-2" attributes="0"/>
@@ -33,18 +38,12 @@
               <Component id="jButton4" min="-2" pref="87" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnSair" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,8 +51,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSair" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -61,7 +63,7 @@
                   <Component id="jButton4" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="btnGerenciarClientes" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace pref="101" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,6 +95,11 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gerencia da Oficina"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSair">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
     </Component>
   </SubComponents>

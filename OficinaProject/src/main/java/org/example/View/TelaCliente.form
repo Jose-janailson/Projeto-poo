@@ -25,81 +25,57 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel2" max="32767" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtNome" max="32767" attributes="0"/>
-                          <Component id="txtCpf" min="-2" pref="148" max="-2" attributes="0"/>
-                      </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnCadrastrar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnRemover" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="filler1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnCadrastrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnRemover" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="btnLimpar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="btnAtualizar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Component id="btnAtualizar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="txtNome" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCpf" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnRemover" alignment="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnCadrastrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="filler1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnCadrastrar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="btnRemover" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="btnAtualizar" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="204" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nome:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNome">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="CPF:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtCpf">
-    </Component>
     <Component class="javax.swing.JButton" name="btnCadrastrar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadrastrar"/>
@@ -112,16 +88,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Remover"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnLimpar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limpar"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAtualizar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
@@ -136,8 +113,22 @@
               </Table>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblClientesMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="20" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Clientes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.Box$Filler" name="filler1">
+    </Component>
   </SubComponents>
 </Form>
