@@ -15,8 +15,8 @@ public class ClienteRepository {
     }
 
     public void adicionarCliente(Cliente cliente) {
-        clientes.add(cliente);
-        salvarClienteNoArquivo();
+            clientes.add(cliente);
+            salvarClienteNoArquivo();
     }
 
     public void removerCliente(Cliente cliente) {

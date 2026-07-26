@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package org.example.View;
-
+import javax.swing.JOptionPane;
+import org.example.Controller.ClienteController;
+import org.example.Model.Cliente;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author maycon
@@ -11,12 +14,30 @@ package org.example.View;
 public class TelaCliente extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCliente.class.getName());
-
+    private final ClienteController clienteController;
     /**
      * Creates new form TelaCliente
+     * @param clienteController
      */
-    public TelaCliente() {
+    public TelaCliente(ClienteController clienteController) {
         initComponents();
+        this.clienteController = clienteController;
+        atualizarTabela();
+        setLocationRelativeTo(null);
+        setResizable(false);
+    }
+        
+    private void atualizarTabela() {
+        DefaultTableModel modelo = (DefaultTableModel) tblClientes.getModel();
+
+        modelo.setRowCount(0);
+
+        for (Cliente cliente : clienteController.listarClientes()) {
+            modelo.addRow(new Object[]{
+                cliente.getNome(),
+                cliente.getCpf()
+            });
+        }
     }
 
     /**
@@ -28,34 +49,25 @@ public class TelaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
         btnCadrastrar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
-        btnLimpar = new javax.swing.JButton();
         btnAtualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de clientes");
-
-        jLabel1.setText("Nome:");
-
-        txtNome.addActionListener(this::txtNomeActionPerformed);
-
-        jLabel2.setText("CPF:");
 
         btnCadrastrar.setText("Cadrastrar");
         btnCadrastrar.addActionListener(this::btnCadrastrarActionPerformed);
 
         btnRemover.setText("Remover");
-
-        btnLimpar.setText("Limpar");
+        btnRemover.addActionListener(this::btnRemoverActionPerformed);
 
         btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(this::btnAtualizarActionPerformed);
 
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -68,103 +80,126 @@ public class TelaCliente extends javax.swing.JFrame {
                 "Nome", "CPF"
             }
         ));
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblClientes);
+
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCadrastrar)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRemover)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome)
-                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCadrastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRemover)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLimpar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAtualizar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)))
+                .addGap(45, 45, 45)
+                .addComponent(btnAtualizar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCadrastrar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCadrastrar)
-                        .addComponent(btnAtualizar)
-                        .addComponent(btnLimpar)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                        .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
     private void btnCadrastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadrastrarActionPerformed
-        // TODO add your handling code here:
+        CadrastrarCliente dialog = new CadrastrarCliente(this, true, clienteController, null);
+dialog.setVisible(true);
+
+atualizarTabela();
     }//GEN-LAST:event_btnCadrastrarActionPerformed
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        try{
+        int linha = tblClientes.getSelectedRow();
+        if(linha == -1){
+            JOptionPane.showMessageDialog(this, "Clique em uma linha na tabela para removê-la");
+            return;
+        }
+        String cpf = tblClientes.getValueAt(linha, 1).toString();
+        clienteController.removerCliente(cpf);
+        atualizarTabela();
+        JOptionPane.showMessageDialog(this, "Cliente removido com sucesso!");
+        }catch(IllegalArgumentException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao remover Cliente", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        int linha = tblClientes.getSelectedRow();
+        String cpf = tblClientes.getValueAt(linha, 1).toString();
+        String nome = tblClientes.getValueAt(linha, 0).toString();
+    }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        int linha = tblClientes.getSelectedRow();
+
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(this, "Selecione um cliente na tabela.");
+            return;
+        }
+        
+        String cpf = tblClientes.getValueAt(linha, 1).toString();
+        
+        Cliente cliente = clienteController.buscarClientePorCpf(cpf);
+        
+        CadrastrarCliente dialog = new CadrastrarCliente(
+                this,
+                true,
+                clienteController,
+                cliente
+        );
+        
+        dialog.setVisible(true);
+        atualizarTabela();
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TelaCliente().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnCadrastrar;
-    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblClientes;
-    private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
