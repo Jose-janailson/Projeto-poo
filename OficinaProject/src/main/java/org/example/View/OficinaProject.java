@@ -38,7 +38,7 @@ public class OficinaProject extends javax.swing.JFrame {
     private void initComponents() {
 
         btnGerenciarClientes = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BotaoProMecanico = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnAbaCarros = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -50,14 +50,17 @@ public class OficinaProject extends javax.swing.JFrame {
         btnGerenciarClientes.setText("Clientes");
         btnGerenciarClientes.addActionListener(this::btnGerenciarClientesActionPerformed);
 
-        jButton2.setText("Mecânicos");
+        BotaoProMecanico.setText("Mecânicos");
+        BotaoProMecanico.addActionListener(this::BotaoProMecanicoActionPerformed);
 
         jButton3.setText("Ordens de Serviços");
 
         btnAbaCarros.setText("Carros");
         btnAbaCarros.addActionListener(this::btnAbaCarrosActionPerformed);
 
-        jLabel1.setText("Gerencia da Oficina");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Gerenciador da Oficina");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnSair.setText("Sair");
 
@@ -73,11 +76,16 @@ public class OficinaProject extends javax.swing.JFrame {
                 .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jButton2)
+                .addComponent(BotaoProMecanico)
                 .addGap(39, 39, 39)
                 .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(183, 183, 183)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -97,6 +105,8 @@ public class OficinaProject extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoProMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
@@ -115,6 +125,11 @@ public class OficinaProject extends javax.swing.JFrame {
         telaCarro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAbaCarrosActionPerformed
+    private void BotaoProMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProMecanicoActionPerformed
+         TelaMecanico telaMec = new TelaMecanico(); 
+         telaMec.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_BotaoProMecanicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +158,7 @@ public class OficinaProject extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbaCarros;
+    private javax.swing.JButton BotaoProMecanico;
     private javax.swing.JButton btnGerenciarClientes;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton2;
