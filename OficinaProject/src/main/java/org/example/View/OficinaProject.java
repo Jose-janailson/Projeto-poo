@@ -50,75 +50,43 @@ public class OficinaProject extends javax.swing.JFrame {
         setTitle("Oficina Project");
 
         btnGerenciarClientes.setText("Clientes");
-        btnGerenciarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerenciarClientesActionPerformed(evt);
-            }
-        });
+        btnGerenciarClientes.addActionListener(this::btnGerenciarClientesActionPerformed);
+        getContentPane().add(btnGerenciarClientes, java.awt.BorderLayout.CENTER);
 
+        BotaoProMecanico.setBackground(new java.awt.Color(153, 153, 255));
+        BotaoProMecanico.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         BotaoProMecanico.setText("Mecânicos");
-        BotaoProMecanico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoProMecanicoActionPerformed(evt);
-            }
-        });
+        BotaoProMecanico.setPreferredSize(new java.awt.Dimension(140, 45));
+        BotaoProMecanico.addActionListener(this::BotaoProMecanicoActionPerformed);
+        getContentPane().add(BotaoProMecanico, java.awt.BorderLayout.PAGE_START);
 
+        jButton3.setBackground(new java.awt.Color(153, 153, 255));
+        jButton3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jButton3.setText("Ordens de Serviços");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        jButton3.setPreferredSize(new java.awt.Dimension(140, 45));
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        getContentPane().add(jButton3, java.awt.BorderLayout.PAGE_END);
 
+        btnAbaCarros.setBackground(new java.awt.Color(153, 153, 255));
+        btnAbaCarros.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         btnAbaCarros.setText("Carros");
-        btnAbaCarros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAbaCarrosActionPerformed(evt);
-            }
-        });
+        btnAbaCarros.setPreferredSize(new java.awt.Dimension(140, 45));
+        btnAbaCarros.addActionListener(this::btnAbaCarrosActionPerformed);
+        getContentPane().add(btnAbaCarros, java.awt.BorderLayout.LINE_END);
 
+        jLabel1.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gerenciador da Oficina");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel1.setPreferredSize(new java.awt.Dimension(140, 45));
+        getContentPane().add(jLabel1, java.awt.BorderLayout.LINE_START);
 
+        btnSair.setBackground(new java.awt.Color(153, 153, 255));
+        btnSair.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         btnSair.setText("Sair");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoProMecanico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(39, 39, 39)
-                .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSair)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSair)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoProMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+        btnSair.setPreferredSize(new java.awt.Dimension(140, 45));
+        getContentPane().add(btnSair, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
