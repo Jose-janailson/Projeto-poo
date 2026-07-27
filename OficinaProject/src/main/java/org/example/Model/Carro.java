@@ -21,6 +21,10 @@ public class Carro implements Serializable {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    
+    public String getCpfProprietario(){
+        return this.proprietario.getCpf();
+    }
 
     public String getMarca() {
         return marca;

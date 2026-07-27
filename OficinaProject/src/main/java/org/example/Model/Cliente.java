@@ -7,7 +7,7 @@ import java.util.List;
 public class Cliente implements Serializable{
     private String nome;
     private String cpf;
-    private List<Carro> carros = new ArrayList<>();
+    private final List<Carro> carros = new ArrayList<>();
 
     public Cliente(String nome, String cpf) {
         this.nome = nome;
@@ -49,7 +49,7 @@ public class Cliente implements Serializable{
     }
 
     @Override
-    public String toString() {  
-        return "Nome: " + nome + ", CPF: " + cpf + ", Carros: " + carros;   
+    public String toString() {
+        return nome;
     }
 }
