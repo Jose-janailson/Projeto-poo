@@ -79,7 +79,7 @@ private void carregarCarrosDoCliente() {
                 }
             }
         }
-    } // <--- ESTA CHAVE ESTAVA FALTANDO AQUI!
+    }
     
 
     /**

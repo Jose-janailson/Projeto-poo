@@ -17,6 +17,8 @@ public class TelaOrdemDeServico extends javax.swing.JFrame {
      */
     public TelaOrdemDeServico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
