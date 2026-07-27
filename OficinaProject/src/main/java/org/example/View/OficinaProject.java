@@ -5,6 +5,8 @@
 package org.example.View;
 import org.example.repository.ClienteRepository;
 import org.example.Controller.ClienteController;
+import org.example.repository.CarroRepository;
+import org.example.Controller.CarroController;
 
 /**
  *
@@ -15,6 +17,8 @@ public class OficinaProject extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OficinaProject.class.getName());
     private final ClienteRepository clienteRepository = new ClienteRepository();
     private final ClienteController clienteController = new ClienteController(clienteRepository);
+    private final CarroRepository carroRepository = new CarroRepository();
+    private final CarroController carroController = new CarroController(carroRepository, clienteRepository);
     /**
      * Creates new form OficinaProject
      */
@@ -36,7 +40,7 @@ public class OficinaProject extends javax.swing.JFrame {
         btnGerenciarClientes = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAbaCarros = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
 
@@ -50,7 +54,8 @@ public class OficinaProject extends javax.swing.JFrame {
 
         jButton3.setText("Ordens de Serviços");
 
-        jButton4.setText("Carros");
+        btnAbaCarros.setText("Carros");
+        btnAbaCarros.addActionListener(this::btnAbaCarrosActionPerformed);
 
         jLabel1.setText("Gerencia da Oficina");
 
@@ -70,7 +75,7 @@ public class OficinaProject extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jButton2)
                 .addGap(39, 39, 39)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
             .addGroup(layout.createSequentialGroup()
                 .addGap(183, 183, 183)
@@ -91,7 +96,7 @@ public class OficinaProject extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
@@ -100,10 +105,16 @@ public class OficinaProject extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGerenciarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarClientesActionPerformed
-        TelaCliente telaCliente = new TelaCliente(clienteController);
+        TelaCliente telaCliente = new TelaCliente(clienteController, carroController);
         telaCliente.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnGerenciarClientesActionPerformed
+
+    private void btnAbaCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbaCarrosActionPerformed
+        TelaCarro telaCarro = new TelaCarro(carroController, clienteController);
+        telaCarro.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAbaCarrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,11 +142,11 @@ public class OficinaProject extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbaCarros;
     private javax.swing.JButton btnGerenciarClientes;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
