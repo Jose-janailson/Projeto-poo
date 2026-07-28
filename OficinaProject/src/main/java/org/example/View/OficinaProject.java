@@ -45,48 +45,90 @@ public class OficinaProject extends javax.swing.JFrame {
         btnAbaCarros = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Oficina Project");
 
         btnGerenciarClientes.setText("Clientes");
         btnGerenciarClientes.addActionListener(this::btnGerenciarClientesActionPerformed);
-        getContentPane().add(btnGerenciarClientes, java.awt.BorderLayout.CENTER);
 
-        BotaoProMecanico.setBackground(new java.awt.Color(153, 153, 255));
-        BotaoProMecanico.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        BotaoProMecanico.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         BotaoProMecanico.setText("Mecânicos");
         BotaoProMecanico.setPreferredSize(new java.awt.Dimension(140, 45));
         BotaoProMecanico.addActionListener(this::BotaoProMecanicoActionPerformed);
-        getContentPane().add(BotaoProMecanico, java.awt.BorderLayout.PAGE_START);
 
-        jButton3.setBackground(new java.awt.Color(153, 153, 255));
-        jButton3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jButton3.setText("Ordens de Serviços");
         jButton3.setPreferredSize(new java.awt.Dimension(140, 45));
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, java.awt.BorderLayout.PAGE_END);
 
-        btnAbaCarros.setBackground(new java.awt.Color(153, 153, 255));
-        btnAbaCarros.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnAbaCarros.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         btnAbaCarros.setText("Carros");
         btnAbaCarros.setPreferredSize(new java.awt.Dimension(140, 45));
         btnAbaCarros.addActionListener(this::btnAbaCarrosActionPerformed);
-        getContentPane().add(btnAbaCarros, java.awt.BorderLayout.LINE_END);
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gerenciador da Oficina");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setPreferredSize(new java.awt.Dimension(140, 45));
-        getContentPane().add(jLabel1, java.awt.BorderLayout.LINE_START);
 
-        btnSair.setBackground(new java.awt.Color(153, 153, 255));
-        btnSair.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnSair.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         btnSair.setText("Sair");
         btnSair.setPreferredSize(new java.awt.Dimension(140, 45));
-        getContentPane().add(btnSair, java.awt.BorderLayout.CENTER);
+        btnSair.addActionListener(this::btnSairActionPerformed);
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel2.setText("Seja bem-vindo! Escolha uma opção:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(91, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(91, 91, 91))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BotaoProMecanico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(53, 53, 53)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(20, 20, 20)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGerenciarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAbaCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoProMecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,6 +156,10 @@ public class OficinaProject extends javax.swing.JFrame {
         telaOrdem.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,5 +190,6 @@ public class OficinaProject extends javax.swing.JFrame {
     private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
